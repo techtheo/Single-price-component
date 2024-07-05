@@ -1,0 +1,177 @@
+/* wild card */
+* {
+  box-sizing: border-box;
+}
+
+/* styling for body */
+body {
+  max-width: 1440px; /* Maximum width of the body */
+  margin: 0 auto; /* Center align the body horizontally */
+  background-color: hsl(204, 43%, 93%); /* Light grayish blue background */
+  font-family: 'Karla:ital', sans-serif; /* Font family */
+}
+
+/* Styling for container */
+.container {
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  grid-template-rows: repeat(2, auto); /* Two rows with automatic height */
+  grid-template-areas: "top top" "grid1 grid2"; /* Define grid areas */
+  max-width: 800px; /* Maximum width of the container */
+  margin: 64px auto; /* Center align the container horizontally with margin */
+}
+
+/* Styling for top  */
+.top {
+  background-color: #fff; /* White background */
+  padding: 16px 32px; /* Padding */
+  border-top-left-radius: 8px; /* Rounded top-left corner */
+  border-top-right-radius: 8px; /* Rounded top-right corner */
+  grid-area: top; /* Place in the 'top' grid area */
+  transition: transform 0.3s ease-in-out; /* Adding transition for smooth animation */
+  cursor: pointer;
+}
+
+.top:hover {
+  transform: translateY(-5px); /* Move the element up by 5 pixels on hover */
+}
+
+/* Styling for heading elements */
+.h1 {
+  color: hsl(179, 62%, 43%); /* Text color */
+  font-weight: 400; /* Font weight */
+}
+
+.h2 {
+  color: hsl(71, 73%, 54%); /* Text color */
+  font-weight: 400; /* Font weight */
+}
+
+.idan {
+  color: hsl(218, 22%, 67%); /* Text color */
+  font-size: 18px; /* Font size */
+}
+
+/* Styling for grid1 section */
+.grid1 {
+  background-color: hsl(179, 62%, 43%); /* Background color */
+  padding: 16px 32px; /* Padding */
+  color: #fff; /* Text color */
+  border-bottom-left-radius: 8px; /* Rounded bottom-left corner */
+  grid-area: grid1; /* Place in the 'grid1' grid area */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adding transitions for smooth animation */
+  cursor: pointer;
+}
+
+.grid1:hover {
+  transform: translateY(-5px); /* Move the element up by 5 pixels on hover */
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow on hover */
+}
+
+/* Styling for grid2 section */
+.grid2 {
+  background-color: hsl(179, 63%, 54%); /* Background color */
+  padding: 16px 32px; /* Padding */
+  color: #fff; /* Text color */
+  border-bottom-right-radius: 8px; /* Rounded bottom-right corner */
+  grid-area: grid2; /* Place in the 'grid2' grid area */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adding transitions for smooth animation */
+  cursor: pointer;
+}
+
+.grid2:hover {
+  transform: translateY(-5px); /* Move the element up by 5 pixels on hover */
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow on hover */
+}
+/* Styling for heading elements inside grid sections */
+.head,
+.head2 {
+  font-size: 24px; /* Font size */
+  font-weight: 400; /* Font weight */
+}
+
+/* Styling for larger text in grid sections */
+.dolls {
+  font-size: 40px; /* Font size */
+  font-weight: bold; /* Bold font weight */
+  color: #fff; /* Text color */
+  margin: 0; /* Remove margin */
+}
+
+/* Styling for smaller text in grid sections */
+.dolls2 {
+  color: #ccc; /* Text color */
+  font-size: 20px; /* Font size */
+  font-weight: 100; /* Light font weight */
+}
+
+/* Reset default styles for unordered lists */
+ul {
+  list-style-type: none; /* Remove default bullet */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styling for list items */
+li {
+  color: #fff; /* Text color */
+  margin-bottom: 8px; /* Margin bottom */
+}
+
+/* Styling for buttons */
+.btn {
+  padding: 10px 40px; /* Padding */
+  border-radius: 20px; /* Rounded corners */
+  border: none; /* Remove border */
+  background-color: hsl(71, 73%, 54%); /* Background color */
+  color: #fff; /* Text color */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor style */
+  position: relative; /* Ensure proper positioning for absolute animation */
+}
+
+.btn:hover {
+  background-color: #fff; /* Background color on hover */
+  color: hsl(71, 73%, 54%); /* Text color on hover */
+  animation: spin 1s  linear; /* Apply spinning animation */
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); /* Full rotation */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto; /* Auto-sized rows */
+    grid-template-areas:
+      "top"
+      "grid1"
+      "grid2";
+    max-width: 100%; 
+    margin: 32px auto; 
+  }
+
+  .top, .grid1, .grid2 {
+    padding: 16px;
+  }
+
+  .btn {
+    padding: 8px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top, .grid1, .grid2 {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 6px 20px;
+    font-size: 12px;
+  }
+}
